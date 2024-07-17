@@ -8,7 +8,7 @@ const ListRecipe = () => {
     
     const [recipes, setRecipes] = useState([]);
     const initialOptions = {
-        "client-id": "AYyvtnk_9ePbbxnlBA0aATj_S1ILaC8iTz9o-EA_E7c9X7WWRccpK3mJG2gyzxdZ2FhyOGEUmDciYLsb",
+        "client-id": "ATTa_pgbXnWg0zCev2ejI_RhLpkyxxea_QmeXTGttI68gYnr4CKZPtr4LaTIjKCDnh0JEOZEIKEQjiKL",
         currency: "SGD",
         intent: "capture",
     };
