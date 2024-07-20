@@ -26,15 +26,33 @@ const ListRecipe = () => {
     });
 
     return (
-        <div className="m-8">
-            <h1 className="text-2xl font-bold text-center">List of Recipes</h1>
-            <div className="flex flex-row my-8">
-                {recipes && recipes.map(recipe => (
-                    <div key={recipe.id} onClick={() => navigation(`/${recipe.id}`)} className="p-10 border border-1 hover:bg-orange-200 w-3/12">
-                        <img src={recipe.imageURL} alt={recipe.name} className="mx-auto mb-4" width="144"/>
-                        <p className="text-center">{recipe.name}</p>
-                    </div>
-                ))}
+        <div className="min-h-screen bg-gray-100 flex flex-col gap-12 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-4xl w-full space-y-8">
+                <div>
+                    <h2 className="text-center text-3xl font-extrabold text-gray-900">Our Recipes</h2>
+                    <p className="mt-2 text-center text-sm text-gray-600">
+                        Discover delicious recipes to try at home.
+                    </p>
+                </div>
+                <div className="bg-white shadow sm:rounded-lg">
+                    <ul className="divide-y divide-gray-200">
+                        {recipes.map((recipe) => (
+                        <li key={recipe.id} className="px-4 py-6 sm:px-6">
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-8">
+                                    <img src={recipe.imageURL} width={144} alt={recipe.name} />
+                                    <h3 className="text-lg leading-6 font-medium text-gray-900">{recipe.name}</h3>
+                                </div>
+                                <div className="ml-4 flex-shrink-0">
+                                    <button onClick={() => navigation(`/${recipe.id}`)} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        View Recipe
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
             <div>
                 <h1 className="text-lg font-bold text-center">Tip here!</h1>
